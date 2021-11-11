@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Landing Page-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="LandingPage" customModule="Web_Browser" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rO7-M5-QdS">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UER-Py-cQc">
+                                <rect key="frame" x="0.0" y="44" width="25" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="25" id="0KL-RW-68c"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="labelColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" image="chevron.right.circle.fill"/>
+                                <connections>
+                                    <action selector="showTopBar:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OkJ-tU-BCf"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="vXh-zE-ELj">
+                                <rect key="frame" x="20" y="44" width="374" height="34"/>
+                                <subviews>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xJT-Zi-gpj">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="IEL-0R-g4M"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.left.circle.fill"/>
+                                        <connections>
+                                            <action selector="goBack:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L7t-cE-6yA"/>
+                                        </connections>
+                                    </button>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DDJ-gE-sOF">
+                                        <rect key="frame" x="0.0" y="0.0" width="25" height="34"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="eiW-0e-Vf8"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="chevron.right.circle.fill"/>
+                                        <connections>
+                                            <action selector="goForward:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IXX-7C-nxa"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter URL or a keyword to search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ojl-Kn-L2w">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="34"/>
+                                        <color key="tintColor" systemColor="opaqueSeparatorColor"/>
+                                        <rect key="contentStretch" x="0.75" y="0.0" width="1" height="1"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" textContentType="url"/>
+                                        <connections>
+                                            <action selector="search:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="yl8-6O-gap"/>
+                                        </connections>
+                                    </textField>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="rO7-M5-QdS" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="0he-bW-aLg"/>
+                            <constraint firstItem="vXh-zE-ELj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="7w0-dE-gzg"/>
+                            <constraint firstItem="UER-Py-cQc" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="FLn-IJ-Y4V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rO7-M5-QdS" secondAttribute="trailing" id="ILb-vU-viC"/>
+                            <constraint firstItem="vXh-zE-ELj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Te0-2L-TGR"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="vXh-zE-ELj" secondAttribute="trailing" constant="20" id="YAU-hW-Grs"/>
+                            <constraint firstItem="UER-Py-cQc" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="c0w-Wp-CSn"/>
+                            <constraint firstItem="rO7-M5-QdS" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="cy9-jL-ocZ"/>
+                            <constraint firstAttribute="bottom" secondItem="rO7-M5-QdS" secondAttribute="bottom" id="xYb-hy-x9z"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="back" destination="xJT-Zi-gpj" id="cE7-aL-xmc"/>
+                        <outlet property="forward" destination="DDJ-gE-sOF" id="Owp-PC-kH7"/>
+                        <outlet property="leading" destination="Te0-2L-TGR" id="X4e-9P-ThH"/>
+                        <outlet property="page" destination="rO7-M5-QdS" id="uft-U2-B9N"/>
+                        <outlet property="show" destination="UER-Py-cQc" id="wl3-Lx-LUd"/>
+                        <outlet property="topBar" destination="vXh-zE-ELj" id="o6E-wZ-V6V"/>
+                        <outlet property="trailing" destination="YAU-hW-Grs" id="w2a-cL-1Pr"/>
+                        <outlet property="url" destination="ojl-Kn-L2w" id="c9n-2Z-vXd"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="chevron.left.circle.fill" width="17" height="17"/>
+        <image name="chevron.right.circle.fill" width="17" height="17"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="opaqueSeparatorColor">
+            <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
